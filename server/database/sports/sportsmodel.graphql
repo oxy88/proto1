@@ -1,0 +1,23 @@
+type SportsProfile {
+    id: ID! @unique
+    sportsCategory: SportsCategory
+    soccer: SoccerProfile
+    basketball: BasketballProfile
+}
+
+enum SportsCategory {
+    SOCCER
+    BASKETBALL
+}
+
+type SoccerProfile {
+    id: ID! @unique
+    players: Int
+    sportsProfile: SportsProfile
+}
+
+type BasketballProfile {
+    id: ID! @unique
+    players: Int
+    sportsProfile: SportsProfile
+}

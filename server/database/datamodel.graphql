@@ -1,0 +1,22 @@
+type User {
+  id: ID! @unique
+  facebookUserId: String @unique
+  googleUserId: String @unique
+  profiles: [Profile!]!
+  chatRooms: [ChatRoom!]!
+  chats: [Chat!]!
+}
+
+type Profile {
+  id: ID! @unique
+  category: Category
+  gameProfile: GameProfile
+  sportsProfile: SportsProfile
+  user: User
+}
+
+enum Category {
+  GAME
+  SPORTS
+}
+

@@ -1,0 +1,13 @@
+type ChatRoom {
+    id: ID! @unique
+    chats: [Chat!]!
+    users: [User!]!
+}
+
+type Chat {
+    id: ID! @unique
+    createdAt: DateTime!
+    text: String
+    user: User!
+    chatRoom: ChatRoom!
+}

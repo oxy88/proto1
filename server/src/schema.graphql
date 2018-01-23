@@ -1,0 +1,13 @@
+# import User, UserSubscriptionPayload, PubgMode, PubgServer from "./generated/prisma.graphql"
+
+type Query {
+  hello: User
+}
+
+type Mutation {
+  createPubgProfile(mode: PubgMode, server: PubgServer): String
+}
+
+type Subscription {
+  helloSubscription: UserSubscriptionPayload 
+}

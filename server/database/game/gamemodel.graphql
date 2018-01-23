@@ -1,0 +1,82 @@
+type GameProfile {
+    id: ID! @unique
+    gameCategory: GameCategory
+    pubg: PubgProfile
+    lol: LolProfile
+    overwatch: OverwatchProfile
+}
+
+enum GameCategory {
+    PUBG
+    LOL
+    OVERWATCH
+}
+
+type PubgProfile {
+    id: ID! @unique
+    gameProfile: GameProfile
+    mode: PubgMode
+    server: PubgServer
+    rating: Int
+}
+
+enum PubgMode {
+    SQUAD
+    DUO
+}
+
+enum PubgServer {
+    KAKAO
+    ASIA
+}
+
+type LolProfile {
+    id: ID! @unique
+    gameProfile: GameProfile
+    mode: LolMode
+    role: LolRole
+    tier: LolTier
+}
+
+enum LolMode {
+    DUO_RANK
+    FLEX_RANK
+    NORMAL
+}
+
+enum LolRole {
+    FLEX
+    TOP
+    JUNGLE
+    MID
+    ADC
+    SUPPORT
+}
+
+enum LolTier {
+    BRONZE
+    SILVER
+    GOLD
+    PLATINUM
+    DIAMOND
+    MASTER_CHALLENGER
+}
+
+type OverwatchProfile {
+    id: ID! @unique
+    gameProfile: GameProfile
+    mode: OverwatchMode
+    role: OverwatchRole
+    rating: Int
+}
+
+enum OverwatchMode {
+    COMPETITIVE_PLAY
+    QUICK_PLAY
+}
+
+enum OverwatchRole {
+    TANK
+    DPS
+    SUPPORT
+}
